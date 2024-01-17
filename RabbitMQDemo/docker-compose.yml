@@ -1,0 +1,43 @@
+version: '3.4'
+
+services:
+  rabbitmqdemo.api:
+    image: ${DOCKER_REGISTRY-}rabbitmqdemoapi
+    build:
+      context: .
+      dockerfile: RabbitMQDemo.Api/Dockerfile
+    ports:
+      - 49649:8080
+      - 49640:8081
+    networks:
+      - rabbitmq_net
+
+  rabbitmqdemo.broker:
+    container_name: 'RabbitMQDemo.Broker'
+    image: rabbitmq:3.12-management
+    command: bash -c "rabbitmq-plugins enable --offline rabbitmq_consistent_hash_exchange && rabbitmq-server"
+    environment:
+      - RABBITMQ_ERLANG_COOKIE=mysecretcookie
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - 5672:5672
+      - 15672:15672
+    hostname: brokerhost
+    networks:
+      - rabbitmq_net
+
+  rabbitmqdemo.seq:
+    image: datalust/seq:latest
+    container_name: 'RabbitMQDemo.Seq'
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 5341:5341
+      - 8081:80
+    networks:
+      - rabbitmq_net
+
+networks:
+  rabbitmq_net:
+    driver: bridge
