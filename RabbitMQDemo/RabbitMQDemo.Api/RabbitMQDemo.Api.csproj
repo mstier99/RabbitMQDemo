@@ -25,8 +25,4 @@
     <ProjectReference Include="..\RabbitMQDemo.Infra\RabbitMQDemo.Infra.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\Administrator\Dtos\" />
-  </ItemGroup>
-
 </Project>

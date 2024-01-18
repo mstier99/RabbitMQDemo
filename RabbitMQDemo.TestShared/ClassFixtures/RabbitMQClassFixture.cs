@@ -1,4 +1,5 @@
 ﻿using RabbitMQDemo.ResourceTests.Factories;
+using Xunit;
 
 namespace RabbitMQDemo.ResourceTests.ClassFixtures;
 

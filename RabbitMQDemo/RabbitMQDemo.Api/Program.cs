@@ -24,6 +24,8 @@ namespace RabbitMQDemo.Api
 
             var app = builder.Build();
 
+            app.UseMiddleware<ValidationExceptionHandlingMiddleware>();
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSerilogRequestLogging();

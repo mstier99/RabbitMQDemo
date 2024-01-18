@@ -1,4 +1,4 @@
-﻿namespace RabbitMQDemo.TestShared;
+﻿namespace RabbitMQDemo.TestShared.Helpers;
 
 public static class RandomHelper
 {

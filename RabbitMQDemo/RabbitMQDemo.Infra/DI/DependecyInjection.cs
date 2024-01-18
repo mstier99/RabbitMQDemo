@@ -1,7 +1,7 @@
 ﻿using RabbitMQDemo.Application.Repositories;
 using RabbitMQDemo.Infra.RabbitMQ;
+using RabbitMQDemo.Infra.Repositories;
 using RabbitMQDemo.Infra.Repositories.ManagementApi;
-using RabbitMQDemo.Infra.Repositories.Resource;
 
 namespace RabbitMQDemo.Infra.DI;
 

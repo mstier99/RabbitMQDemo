@@ -4,7 +4,7 @@ using RabbitMQDemo.Application.Commands.Resource.CreateExchange;
 using RabbitMQDemo.Application.Commands.Resource.CreateQueue;
 using RabbitMQDemo.Application.Repositories;
 
-namespace RabbitMQDemo.Infra.Repositories.Resource;
+namespace RabbitMQDemo.Infra.Repositories;
 
 public class ResourceRepository : IResourceRepository
 {
@@ -15,11 +15,11 @@ public class ResourceRepository : IResourceRepository
         _connection = connection;
     }
 
-    public Result CreateQueues(List<CreateQueueSubCommand> queues)
+    public Result CreateQueues(CreateQueuesCommand command)
     {
         using var channel = _connection.CreateChannel();
 
-        foreach (var queue in queues)
+        foreach (var queue in command.Queues)
         {
             channel.QueueDeclare(queue.Name, queue.Durable, queue.Exclusive, queue.AutoDelete, queue.Arguments);
         }
@@ -27,11 +27,11 @@ public class ResourceRepository : IResourceRepository
         return Result.Success();
     }
 
-    public Result CreateExchanges(List<CreateExchangeSubCommand> exchanges)
+    public Result CreateExchanges(CreateExchangesCommand command)
     {
         using var channel = _connection.CreateChannel();
 
-        foreach (var exchange in exchanges)
+        foreach (var exchange in command.Exchanges)
         {
             channel.ExchangeDeclare(exchange.Name, exchange.Type, exchange.Durable, exchange.AutoDelete);
         }
@@ -39,11 +39,11 @@ public class ResourceRepository : IResourceRepository
         return Result.Success();
     }
 
-    public Result CreateBinds(List<CreateBindSubCommand> binds)
+    public Result CreateBinds(CreateBindsCommand command)
     {
         using var channel = _connection.CreateChannel();
 
-        foreach (var bind in binds)
+        foreach (var bind in command.Binds)
         {
             channel.QueueBind(bind.QueueName, bind.ExchangeName, bind.RoutingKey, arguments: null);
         }

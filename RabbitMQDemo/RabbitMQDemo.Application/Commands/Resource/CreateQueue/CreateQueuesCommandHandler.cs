@@ -15,7 +15,7 @@ public class CreateQueuesCommandHandler : ICommandHandler<CreateQueuesCommand>
 
     public async Task<Result> Handle(CreateQueuesCommand request, CancellationToken cancellationToken)
     {
-        var result = _repo.CreateQueues(request.Queues);
+        var result = _repo.CreateQueues(request);
         return await Task.FromResult(result);
     }
 }

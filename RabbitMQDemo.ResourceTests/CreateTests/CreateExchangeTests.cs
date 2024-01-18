@@ -2,6 +2,7 @@
 using RabbitMQDemo.Api.Controllers.Resource.Dtos;
 using RabbitMQDemo.ResourceTests.ClassFixtures;
 using RabbitMQDemo.ResourceTests.Factories;
+using RabbitMQDemo.TestShared.Helpers;
 
 namespace RabbitMQDemo.ResourceTests.CreateTests;
 

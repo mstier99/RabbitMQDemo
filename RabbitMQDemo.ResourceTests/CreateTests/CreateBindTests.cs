@@ -3,10 +3,11 @@ using RabbitMQDemo.Api.Controllers.RabbitMQ.Dtos;
 using RabbitMQDemo.Api.Controllers.Resource.Dtos;
 using RabbitMQDemo.ResourceTests.ClassFixtures;
 using RabbitMQDemo.ResourceTests.Factories;
+using RabbitMQDemo.TestShared.Helpers;
 
 namespace RabbitMQDemo.ResourceTests.CreateTests;
 
-public class CreateBindTests : RabbitMQClassFixture
+public class CreateBindTests : ClassFixtures.RabbitMQClassFixture
 {
     public CreateBindTests(RabbitMQWebAppFactory factory) : base(factory)
     {

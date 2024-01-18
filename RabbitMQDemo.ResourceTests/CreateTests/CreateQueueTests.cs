@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using RabbitMQDemo.Api.Controllers.RabbitMQ.Dtos;
 using RabbitMQDemo.ResourceTests.ClassFixtures;
 using RabbitMQDemo.ResourceTests.Factories;
+using RabbitMQDemo.TestShared.Helpers;
 
 namespace RabbitMQDemo.ResourceTests.CreateTests;
 

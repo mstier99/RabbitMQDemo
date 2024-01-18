@@ -2,9 +2,6 @@
 
 public static class ManagementApiEndpoints
 {
-    // TODO validációs kód nem die való!
-    public static List<string> ValidUserTags => new() { "administrator", "monitoring", "policymaker", "impersonator" };
-
     public static string DeleteUsers => "api/users/bulk-delete";
     public static string GetUsersApi => "api/users";
     public static string GetQueues => "/api/queues";

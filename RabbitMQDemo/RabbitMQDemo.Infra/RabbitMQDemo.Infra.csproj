@@ -18,4 +18,8 @@
 	  <ProjectReference Include="..\RabbitMQDemo.Helper\RabbitMQDemo.Helper.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\Resource\" />
+  </ItemGroup>
+
 </Project>

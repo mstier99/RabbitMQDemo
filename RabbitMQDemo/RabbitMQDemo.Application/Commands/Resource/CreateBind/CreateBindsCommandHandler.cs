@@ -15,7 +15,7 @@ public class CreateBindsCommandHandler : ICommandHandler<CreateBindsCommand>
 
     public async Task<Result> Handle(CreateBindsCommand request, CancellationToken cancellationToken)
     {
-        var result = _repo.CreateBinds(request.Binds);
+        var result = _repo.CreateBinds(request);
         return await Task.FromResult(result);
     }
 }

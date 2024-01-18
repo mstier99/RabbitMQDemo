@@ -16,7 +16,7 @@ public class CreateExchangeCommandHandler : ICommandHandler<CreateExchangesComma
 
     public async Task<Result> Handle(CreateExchangesCommand request, CancellationToken cancellationToken)
     {
-        var result = _repo.CreateExchanges(request.Exchanges);
+        var result = _repo.CreateExchanges(request);
         return await Task.FromResult(result);
     }
 }

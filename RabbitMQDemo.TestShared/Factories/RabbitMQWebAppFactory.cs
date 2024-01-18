@@ -6,13 +6,14 @@ using System.Net.Http.Headers;
 using System.Text;
 using Testcontainers.RabbitMq;
 using System.Text.RegularExpressions;
+using Xunit;
 using RabbitMQDemo.Infra.RabbitMQ;
 
 namespace RabbitMQDemo.ResourceTests.Factories;
 
 public class RabbitMQWebAppFactory : WebApplicationFactory<Api.Program>, IAsyncLifetime
 {
-    const string _hostName = "brokerhost";
+    const string _hostName = "brokerhost"; // FEKETEMÁGIA
     const int _defaultManagementApiPort = 15672;
     const int _defaultPort = 5672;
     string? _userName;
@@ -21,7 +22,7 @@ public class RabbitMQWebAppFactory : WebApplicationFactory<Api.Program>, IAsyncL
 
     RabbitMqContainer _rabbitMqContainer = new RabbitMqBuilder()
         // Image
-        .WithImage("rabbitmq:3.12-management")
+        .WithImage("rabbitmq:3.9-management")
         // Ports
         .WithPortBinding(_defaultPort, assignRandomHostPort: true)
         .WithPortBinding(_defaultManagementApiPort, assignRandomHostPort: true)
@@ -46,7 +47,7 @@ public class RabbitMQWebAppFactory : WebApplicationFactory<Api.Program>, IAsyncL
                 option.Password = _password = match.Groups["password"].Value;
 
                 option.ManagamenetApiOptions.Port = _rabbitMqContainer.GetMappedPublicPort(_defaultManagementApiPort);
-                option.ManagamenetApiOptions.Domain = _hostName;
+                option.ManagamenetApiOptions.Domain = "http://localhost"; // FEKETEMÁGIA
             });
         });
     }

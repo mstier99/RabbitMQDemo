@@ -10,6 +10,8 @@
     <PackageReference Include="FluentValidation" Version="11.9.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
     <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.1.21" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
     <PackageReference Include="Serilog" Version="3.1.1" />
@@ -17,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RabbitMQDemo.Domain\RabbitMQDemo.Domain.csproj" />
+    <ProjectReference Include="..\RabbitMQDemo.Helper\RabbitMQDemo.Helper.csproj" />
   </ItemGroup>
 
 </Project>

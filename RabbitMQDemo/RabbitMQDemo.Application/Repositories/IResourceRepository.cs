@@ -6,7 +6,7 @@ namespace RabbitMQDemo.Application.Repositories;
 
 public interface IResourceRepository
 {
-    Result CreateQueues(List<CreateQueueSubCommand> queues);
-    Result CreateExchanges(List<CreateExchangeSubCommand> exchanges);
-    Result CreateBinds(List<CreateBindSubCommand> binds);
+    Result CreateQueues(CreateQueuesCommand command);
+    Result CreateExchanges(CreateExchangesCommand command);
+    Result CreateBinds(CreateBindsCommand command);
 }

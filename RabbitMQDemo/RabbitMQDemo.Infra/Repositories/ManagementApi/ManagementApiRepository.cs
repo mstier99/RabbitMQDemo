@@ -43,11 +43,6 @@ public class ManagementApiRepository : IManagementApiRepository
     // Put
     public async Task<Result> PutUserAsync(CreateUserCommand command)
     {
-        if (command.Tags.All(tag => !ManagementApiEndpoints.ValidUserTags.Contains(tag)))
-        {
-            throw new Exception($"Paraméterben kapott tag-ek egyike nem érvényes. Tag-ek: {string.Join(",", command.Tags)}. Érvényes tag-ek: {string.Join(",", ManagementApiEndpoints.ValidUserTags)}.");
-        }
-
         var userData = JsonSerializer.Serialize
         (
             new
