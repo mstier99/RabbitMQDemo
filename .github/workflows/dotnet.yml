@@ -39,7 +39,7 @@ jobs:
       with:
         image: mstier99/rabbitmqdemo
         registry: docker.io
-        username: mstier99
-        password: b1b790d110A
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
         directory: RabbitMQDemo
         dockerfile: RabbitMQDemo/RabbitMQDemo.Api/Dockerfile
