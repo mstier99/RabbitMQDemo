@@ -33,7 +33,7 @@ jobs:
   
     - name: Resource Test
       run: dotnet test RabbitMQDemo.ResourceTests/RabbitMQDemo.ResourceTests.csproj 
-
+      
     - uses: mr-smithers-excellent/docker-build-push@v6
       name: Build and Push Docker Image
       with:
