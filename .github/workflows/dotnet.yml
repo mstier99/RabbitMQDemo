@@ -25,7 +25,14 @@ jobs:
     - name: Build
       run: dotnet build --no-restore RabbitMQDemo/RabbitMQDemo.Api/RabbitMQDemo.Api.csproj
 
-   
+    - name: Administrator Test
+      run: dotnet test RabbitMQDemo.AdministratorTests/RabbitMQDemo.AdministratorTests.csproj
+
+    - name: Architecture Test
+      run: dotnet test RabbitMQDemo.ArchitectureTests/RabbitMQDemo.ArchitectureTests.csproj
+  
+    - name: Resource Test
+      run: dotnet test RabbitMQDemo.ResourceTests/RabbitMQDemo.ResourceTests.csproj 
 
     - uses: mr-smithers-excellent/docker-build-push@v6
       name: Build and Push Docker Image
