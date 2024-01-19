@@ -25,5 +25,8 @@ jobs:
     - name: Build
       run: dotnet build --no-restore RabbitMQDemo/RabbitMQDemo.Api/RabbitMQDemo.Api.csproj
 
-    - name: Test
+    - name: Administrator Test
       run: dotnet test RabbitMQDemo.AdministratorTests/RabbitMQDemo.AdministratorTests.csproj
+
+    - name: Architecture Test
+      run: dotnet test RabbitMQDemo.AdministratorTests/RabbitMQDemo.AdministratorTests.csproj RabbitMQDemo.ArchitectureTests/RabbitMQDemo.ArchitectureTests.csproj
