@@ -26,4 +26,4 @@ jobs:
       run: dotnet build --no-restore RabbitMQDemo/RabbitMQDemo.Api/RabbitMQDemo.Api.csproj
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal RabbitMQDemo.AdministratorTests.csproj
+      run: dotnet test --no-build --verbosity normal RabbitMQDemo.AdministratorTests/RabbitMQDemo.AdministratorTests.csproj
