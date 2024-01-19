@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -33,7 +32,13 @@ jobs:
   
     - name: Resource Test
       run: dotnet test RabbitMQDemo.ResourceTests/RabbitMQDemo.ResourceTests.csproj 
-      
+
+  publish:
+    runs-on: ubuntu-latest
+    
+    needs: build
+
+    steps:
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
