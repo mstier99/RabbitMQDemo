@@ -26,7 +26,9 @@ jobs:
       run: dotnet build --no-restore RabbitMQDemo/RabbitMQDemo.Api/RabbitMQDemo.Api.csproj
 
     - name: Administrator Test
-      run: dotnet test RabbitMQDemo.AdministratorTests/RabbitMQDemo.AdministratorTests.csproj
-
-    - name: Architecture Test
-      run: dotnet test RabbitMQDemo.ArchitectureTests/RabbitMQDemo.ArchitectureTests.csproj
+      run: |
+        for test_project in RabbitMQDemo.AdministratorTests/RabbitMQDemo.AdministratorTests.csproj \
+                             RabbitMQDemo.ArchitectureTests/RabbitMQDemo.ArchitectureTests.csproj
+        do
+          dotnet test $test_project
+        done
