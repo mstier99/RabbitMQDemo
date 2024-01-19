@@ -30,3 +30,6 @@ jobs:
 
     - name: Architecture Test
       run: dotnet test RabbitMQDemo.ArchitectureTests/RabbitMQDemo.ArchitectureTests.csproj
+  
+    - name: Resource Test
+      run: dotnet test RabbitMQDemo.ResourceTests/RabbitMQDemo.ResourceTests.csproj
