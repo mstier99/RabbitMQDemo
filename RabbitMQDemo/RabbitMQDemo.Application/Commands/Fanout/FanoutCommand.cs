@@ -1,5 +1,4 @@
-﻿using RabbitMQDemo.Application.CQRS;
-using RabbitMQDemo.Domain.Abstraction;
+﻿using RabbitMQDemo.Domain.Abstraction;
 
 namespace RabbitMQDemo.Application.Messages.Fanout;
 

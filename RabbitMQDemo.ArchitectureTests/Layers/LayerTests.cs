@@ -28,7 +28,7 @@ public class LayerTests : Base
         result.IsSuccessful.Should().BeTrue();
     }
 
-    //[Fact]
+    [Fact]
     public void ApplicationLayer_Should_NotHaveDependencyOn_InfrastructureLayer()
     {
         // TODO nem is referál rá, mégse jó

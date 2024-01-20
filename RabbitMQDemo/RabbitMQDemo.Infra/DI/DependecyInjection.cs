@@ -1,4 +1,5 @@
-﻿using RabbitMQDemo.Application.Repositories;
+﻿using RabbitMQDemo.Application.DI;
+using RabbitMQDemo.Application.Repositories;
 using RabbitMQDemo.Infra.RabbitMQ;
 using RabbitMQDemo.Infra.Repositories;
 using RabbitMQDemo.Infra.Repositories.ManagementApi;
@@ -9,6 +10,8 @@ public static class DependecyInjection
 {
     public static IServiceCollection AddInfra(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddApplication(configuration);
+
         services.AddRabbitMQConnection(configuration);
         services.AddManagementApiRepository(configuration);
 

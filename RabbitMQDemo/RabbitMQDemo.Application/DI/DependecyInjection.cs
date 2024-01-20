@@ -1,14 +1,18 @@
 ﻿using FluentValidation;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RabbitMQDemo.Application.PipelineBehaviors;
 using RabbitMQDemo.Application.PipelineBehaviors.Validation;
+using RabbitMQDemo.Domain.DI;
 
 namespace RabbitMQDemo.Application.DI;
 
 public static class DependecyInjection
 {
-    public static IServiceCollection AddApplication(this IServiceCollection services)
+    public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddDomain(configuration);
+
         services.AddMediatrTosolution();
 
         return services;

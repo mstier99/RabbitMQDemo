@@ -1,5 +1,3 @@
-using RabbitMQDemo.Application.DI;
-using RabbitMQDemo.Domain.DI;
 using RabbitMQDemo.Infra.DI;
 using Serilog;
 
@@ -11,8 +9,6 @@ namespace RabbitMQDemo.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddDomain(builder.Configuration);
-            builder.Services.AddApplication();
             builder.Services.AddInfra(builder.Configuration);
 
             builder.Host.UseSerilog((context, loggerConfig) =>
